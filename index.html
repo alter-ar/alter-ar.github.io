@@ -5,17 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="ALTER application's website">
 
-  <title>Metaphore tool</title>
+  <title>ALTER tool</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-  <link href="/web/static/css/custom-bootstrap-override.css" rel="stylesheet">
+  <link href="./styles/main.css" rel="stylesheet">
 
 </head>
 <body>
 
-     <header>
+  <header>
+    <ul class="nav justify-content-center nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="./" id="small-caps">AlteR</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./tool.html">Tool</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./demo.html">Demo</a>
+      </li>
+    </ul>
+  </header>
+
+     <!--<header>
          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
            <a class="navbar-brand" href="./index.html">ALTER</a>
            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +49,7 @@
              </ul>
            </div>
          </nav>
-     </header>
+     </header>-->
 
      <main role="main">
 
@@ -53,25 +67,27 @@
          <hr class="featurette-divider">
 
          <div class="row featurette">
-           <div class="col-md-7">
-               <h2 class="featurette-heading">Alter. <span class="text-muted">Bla bla bla.</span></h2>
-               <p class="lead"><code>Alter</code> Bla bla bla.</p>
-               <p><a class="btn btn-primary btn-lg" href="./tool.html" role="button">Learn more &raquo;</a></p>
-           </div>
-           <div class="col-md-5">
-               <img src="/web/static/images/ipad.png" alt="iPad screenshot" height="500" width="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
-           </div>
+               <p class="lead">Modelling is central to all engineering disciplines, where it is used to specify, understand, analyse and build the system under study, among other activities. Software engineering is no exception, as models are pervasively used during the development process. Models can be built either using general-purpose modelling languages, like the UML, or with domain-specific languages (DSLs) tailored to an application area.</p>
+               <p class="lead">Traditionally, modelling has been performed either manually -- with pen and paper or whiteboards -- or supported by
+tools via desktop computers or laptops. More recently, the improvement of the capabilities in mobile devices (like their
+computer power, touch screen size and components like cameras) has triggered the emergence of environments
+for modelling on mobile devices.</p>
+               <p class="lead">With <code id="small-caps">AlteR</code>, we go one step further from current mobile modelling environments, by proposing the use of DSLs
+enhaced with augmented reality (AR) within mobile devices. Hence, the user will be able
+to create domain-specific models using the device. However, instead of placing the objects on a blank canvas,
+the camera is used to place the objects (virtually) within the user surroundings, using AR.</p>
          </div>
 
          <hr class="featurette-divider">
 
          <div class="row featurette">
            <div class="col-md-7 order-md-2">
-               <h2 class="featurette-heading">Modelling using Augmented Reality. <span class="text-muted">Bla bla bla.</span></h2>
-               <p class="lead">Bla bla bla. </p>
+               <h2 class="featurette-heading" id="small-caps">AlteR. <span class="text-muted">An iOS modelling editor in 3D.</span></h2>
+               <p class="lead"><code id="small-caps">AlteR</code> is an iOS application for creating models and interacting with them using augmented reality and iPhones or iPads.</p>
+               <p><a class="btn btn-info btn-lg" href="./tool.html" role="button">Learn more &raquo;</a></p>
            </div>
            <div class="col-md-5 order-md-1">
-             <img src="/web/static/images/basedpositioning.png" alt="Some figure" height="500" width="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+               <img src="./figures/fig_ipad_alter_example.png" alt="iPad screenshot" height="500" width="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
            </div>
          </div>
 
@@ -79,11 +95,11 @@
 
          <div class="row featurette">
            <div class="col-md-7">
-               <h2 class="featurette-heading">Demo. <span class="text-muted">Bla bla bla.</span></h2>
-               <p class="lead"><code>Alter</code> Bla bla bla.</p>
+               <h2 class="featurette-heading">Demo. <span class="text-muted">"A video is worth a thousand words!"</span></h2>
+               <p class="lead">Because we do not have enough words to replace a real experience, we invite you to check our videos to see <code id="small-caps">AlteR</code> in action and discover its many features.</p>
            </div>
            <div class="col-md-5">
-               <p><a class="btn btn-primary btn-lg" href="./demo.html" role="button">See demo &raquo;</a></p>
+               <p><a class="btn btn-info btn-lg" href="./demo.html" role="button">See demo &raquo;</a></p>
            </div>
          </div>
 
@@ -96,7 +112,7 @@
 
        <!-- FOOTER -->
        <footer class="container">
-         <p class="float-right"><a href="#">Back to top</a></p>
+         <p class="float-right"><a class="btn btn-dark" href="#">Back to top</a></p>
        </footer>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
