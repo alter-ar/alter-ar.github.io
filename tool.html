@@ -34,7 +34,7 @@
           <div class="jumbotron">
             <div class="container text-center">
               <h1 class="display-3 mt-5" id="small-caps">AlteR</h1>
-              <p>An iOS modelling editor in 3D.</p>
+              <p>An iOS domain-modelling editor in 3D.</p>
             </div>
           </div>
 
@@ -42,17 +42,83 @@
 
                 <!-- START THE FEATURETTES -->
 
+                <div class="row featurette">
+                  <div class="col-md">
+                    <h2 class="featurette-heading" id="small-caps">Modelling using AR. <span class="text-muted">Enhance your modelling experience.</span></h2>
+                    <p class="lead">Modelling aims at capturing the essence of a system for a specific purpose. Traditionally, it has been performed either manually
+                      (with pen and paper or whiteboards) or supported by tools via desktop computers or laptops. However, the improvement of the capabilities in mobile devices
+                      (like their computer power, touch screen size and components like cameras) has triggered the emergence of environments
+                      for modelling on them.</p>
+                     <p class="lead">With <code id="small-caps">AlteR</code>, we go one step further from current mobile modelling environments, by proposing the use of DSLs
+                       enhanced with augmented reality (AR) within mobile devices. Hence, the user will be able to create domain-specific models using the device.
+                       However, instead of placing the objects on a blank canvas, the camera is used to place the objects (virtually) within the user surroundings, using AR.</p>
+                   </div>
+                </div>
+
                 <hr class="featurette-divider">
 
                 <div class="row featurette">
-                  <div class="col-md-7">
-                      <h2 class="featurette-heading" id="small-caps">AlteR. <span class="text-muted">(domAin modeLling augmenTEd Reality)</span></h2>
-                      <p class="lead"><code id="small-caps">AlteR</code> is a native iOS app which is using the technology ARKit for creating and manipulating the models using AR. The DSL developper will define an abstract syntax, an AR concrete syntax and 2D or 3D visualization objects, on a desktop computer. The syntaxes have to be serialized in JSON files and the visualization objects have to use the SCN format which is the Apple's SceneKit Scene format. These files are then uploaded on a remote server.</p>
-                      <p class="lead">The DSL users will access the list of meta-models from the server via their iPhones and iPads using our mobile modelling environment app and they will select the meta-model of their choice, retrieve it along with the associated AR syntax and visualization objects, and they will be able to start modelling and placing element in the real world.</p>
-                      <p class="lead">During the modelling session, the DSL users will be able to save their model either locally or remotely. ARKit offers a functionality for persisting the AR world map and recover the entire session later on. Every time a AR session is started, ARKit sets the world origin at the position of the camera of the device, all the placed anchors of the session get their position vector relative to this world origin. When the session is saved, a snapshot is taken, and the origin along with its anchors are saved. Thus, the DSL users will be able to load pre-existing models from the server or their local storage instead of creating a new one, and the saved anchors will be placed at their saved position as soon as the user will point the camera at the same location of the snapshot.</p>
+                  <div class="col-md-7 order-md-2">
+                      <h2 class="featurette-heading">AR-based DSL. <span class="text-muted">A specific concrete syntax for every domain meta-models.</span></h2>
+                      <p class="lead">An AR-based DSL requires the definition of an AR-based concrete syntax. That is why we have defined the meta-model of the
+                        figure on the right which permits defining AR-based syntaxes by annotating the domain meta-models that describe the abstract syntax. </p>
+                      <p class="lead">Our AR-based syntax distinguishes both <em>nodes</em> (class ARNode), which corresponds to EClass in the domain meta-model,
+                        and <em>connections</em> (class ARConnection), which is EReference in the domain meta-model. </p>
+                      <p class="lead">An ARNode has a set of visualization versions (either 2D or 3D) and has an anchor which can be markers (QR codes) or a
+                        location which has to follow some constraints (given plane surface, or a certain distance with other nodes). </p>
                   </div>
-                  <div class="col-md-5">
-                      <img src="./figures/fig_architecture.png" alt="iPad screenshot" height="500" width="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                  <div class="col-md-5 order-md-1">
+                    <p class="figure-caption text-center">Meta-model for AR-based concrete syntaxes.</p>
+                    <img src="./figures/ARRepresentation_MM.png" alt="AR Representation MM" height="500" width="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+
+                    <!--<figure>
+                      <img src="./figures/ARRepresentation_MM.png" alt="iPad screenshot" height="500" width="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                      <figcaption>Fig.1 - Meta-model for AR-based concrete syntaxes.</figcaption>
+                    </figure>-->
+                  </div>
+              </div>
+              <div>
+                <p class="lead">An ARNode also define
+                constraints on how to interact with it (overlapping prevents two objects to be place one over the other, controlling the resizing of
+                an object or establishing a perimeter for moving the virtual object).</p>
+                <p class="lead">An ARConnection is a visual representation of a reference between instances of classes of the domain meta-model. It can
+                have different versions and colors:
+                <ul>
+                  <li><p class="lead">Lines are displayed as floating lines between two related objects, with decorations in the source and target ends,</p></li>
+                  <li><p class="lead">Floors display a reference as a path to follow in the floor from the source to the target object,</p></li>
+                  <li><p class="lead">Tips display arrows on the side of the camera steering the position of the target node, mimicking some
+                  first-person shooter games.</p></li>
+                </ul>
+              </p>
+            </div>
+
+                <hr class="featurette-divider">
+
+                <div class="row featurette">
+                  <div class="col-md-8">
+                      <h2 class="featurette-heading" id="small-caps">AlteR. <span class="text-muted">(domAin modeLling augmenTEd Reality)</span></h2>
+                      <p class="lead"><code id="small-caps">AlteR</code> is a native iOS app which is using the technology <a href="https://developer.apple.com/augmented-reality/arkit/">ARKit</a>
+                        for creating and manipulating AR-based domain-specific languages (DSL).
+                        <p class="lead">On his computer the DSL developer will define:
+                          <ul>
+                            <li><p class="lead">an abstract syntax of the domain meta-model,</p></li>
+                            <li><p class="lead">an AR concrete syntax,</p></li>
+                            <li><p class="lead">2D or 3D visualization objects.</p></li>
+                          </ul></p>
+                      <p class="lead">Currently, the syntaxes have to be serialized in JSON and the 3D/2D graphics have to use the Apple's SceneKit Scene (SCN) format.
+                        These files will be stored on a web server.</p>
+                      <p class="lead">The DSL users will access the list of meta-models from the server via their iPhones and iPads using <code id="small-caps">AlteR</code>
+                        and they will select the meta-model of their choice, retrieve it along with the associated AR syntax and visualization objects, and they will be able
+                        to start modelling and placing an element in the real world.</p>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="figure-caption text-center">Architecture of <span id="small-caps">AlteR</span>.</p>
+                      <img src="./figures/fig_architecture.png" alt="iPad screenshot" height="250" width="250" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="250" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+
+                    <!--<figure>
+                      <img src="./figures/fig_architecture.png" alt="iPad screenshot" height="300" width="300" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                      <figcaption>Fig.2 - Architecture of <span id="small-caps">AlteR</span>.</figcaption>
+                    </figure>-->
                   </div>
                 </div>
 
@@ -61,28 +127,36 @@
                 <div class="row featurette">
                   <div class="col-md-7 order-md-2">
                       <h2 class="featurette-heading">Modelling. <span class="text-muted">An AR Editor</span></h2>
-                      <p class="lead">The screenshot on the right is the <code id="small-caps">AlteR</code> editor canvas. It shows the main screen of the mobile app. Label 1 corresponds to the list of items that can be placed in the real world and are named after the classes of the meta-model.</p>
+                      <p class="lead">The screenshot on Fig.1 is the <code id="small-caps">AlteR</code> editor canvas. It shows the main screen of the mobile app.</p>
+                      <p class="lead">Label 1 corresponds to the list of nodes that can be placed in the real world and are named after the classes of the meta-model.</p>
                       <p class="lead">Label 2 points at a 3D node and depicts the list of interaction available:
                         <ul>
                           <li><p class="lead">Tap is used to place an item at the tapped location after selecting one in the list of Label 1,</p></li>
                           <li><p class="lead">Swipe allows to change the visual representation of a node if there are different one for the same ARNode,</p></li>
                           <li><p class="lead">Pinch permits to resize an item,</p></li>
-                          <li><p class="lead">Long press an item will display its attributes and allows to edit them or to delete the item,</p></li>
+                          <li><p class="lead">Long press an item will display its attributes and allows to edit them, add connections, or to delete the item as shown in Fig.2,</p></li>
                           <li><p class="lead">Pan moves the node in the world and change its position.</p></li>
                         </ul></p>
-                      <p class="lead">Note that the ARNode is associated with an ARAnchor and this is that later one that is serialized along with all the data about the ARNode.
-Label 3 shows the displayed attributes of a node as a key-value list. Finally, there are two buttons at the top to either save the model (Label 4) in order to work on it again later or to quit de modelling session (label 5). </p>
+                      <p class="lead">Label 3 shows the displayed attributes of a node as a key-value list.</p>
+                      <p class="lead">Label 4 points at a line connecting two nodes, which represents a reference between two model objects. A connection can be set
+                      via the menu of the attributes view (see Fig.2).</p>
+                      <p class="lead">There are two buttons at the top to either save the model (Label 5) in order
+                        to work on it again later or to quit de modelling session (label 6).</p>
+                      <p class="lead">Note that when a virtual object is created, an anchor is positionned at the tap location which is relative to the established world origin and
+                        its node representation is attached to this anchor. When the model is saved, the world origin, a snapshot of the current position and the anchors along with
+                        all the data about their nodes are serialized. When a previous model is loaded, the saved anchors are placed at their previous position as soon as the camera
+                      is pointing the same location of the snapshot.</p>
+                      <p class="lead">Finally, as mentioned earlier, Fig.2 shows the menu that display the attributes and references of a selected node and permits to modify it or
+                        delete it.</p>
+                      <p class="lead">Videos illustrating these features are available in <a href="./demo.html">Demo</a>.</p>
                   </div>
                   <div class="col-md-5 order-md-1">
-                      <img src="./figures/fig_alter_app.png" alt="iPad screenshot" height="500" width="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                    <img src="./figures/fig_alter_app.png" alt="iPad screenshot" height="500" width="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                    <p class="figure-caption text-center">Fig.1 - Main canvas of <span id="small-caps">AlteR</span>.</p>
+                    <img src="./figures/alter_attr.png" alt="Alter's attributes view" height="500" width="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                    <p class="figure-caption text-center">Fig.2 - <span id="small-caps">AlteR</span>'s attributes view.</p>
                   </div>
-                </div>
-
-                <hr class="featurette-divider">
-
-                <div class="row featurette">
-
-                  <img src="./figures/fig_mac_info.png" alt="test3" height="500" width="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                  </div>
                 </div>
 
                 <hr class="featurette-divider">
