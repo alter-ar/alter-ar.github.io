@@ -17,6 +17,10 @@ header {
   color: white;
 }
 
+.jumbotron a {
+  color: white;
+}
+
 body {
   background-color: #E4E7EB;
 }
