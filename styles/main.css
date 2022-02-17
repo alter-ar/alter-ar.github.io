@@ -35,11 +35,11 @@ a {
 }
 
 .jumbotron a {
-  color: white;
+  color: #ABABAB;
 }
 
 .jumbotron a:visited {
-  color: white;
+  color: #E4E7EB;
 }
 
 .nav-tabs li a {font-size:22px;}
