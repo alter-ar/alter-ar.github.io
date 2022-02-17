@@ -17,10 +17,6 @@ header {
   color: white;
 }
 
-.jumbotron a {
-  color: white;
-}
-
 body {
   background-color: #E4E7EB;
 }
@@ -36,6 +32,14 @@ header a:visited {
 
 a {
   color: #1B92A9;
+}
+
+.jumbotron a {
+  color: white;
+}
+
+.jumbotron a:visited {
+  color: white;
 }
 
 .nav-tabs li a {font-size:22px;}
