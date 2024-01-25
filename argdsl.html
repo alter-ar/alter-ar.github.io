@@ -100,7 +100,7 @@
                 </div>
                 <div class="row featurette">
                   <div class="col-md">
-                    <p class="lead">Next, we will configure the graphical representation. Outside the Game object, we put the Graphic object. Inside we indicate the element defined in the domain, following with the graphical versions and constraints.</p>
+                    <p class="lead">Next, we will configure the graphical representation. Outside the Game object in the same file, we put the Graphic object. Inside we indicate the element defined in the domain, following with the graphical versions and constraints.</p>
                     <p class="lead">The graphical versions consist in a pair with a name of the version and a valid URL of the 3D object. You can put as many pairs as you want.</p>
                     <p class="lead">The constraints goal is to edit the following features of the AR objects:</p>
                     <ul>
@@ -116,6 +116,29 @@
                   <div class="col-md-6 order-md-1">
                     <p class="figure-caption text-center">Graphic.</p>
                     <img src="./figures/tutorialGraph.jpg" alt="tutorialGraph" height="500" width="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                  </div>
+                </div>
+                <div class="row featurette">
+                  <div class="col-md">
+                    <p class="lead">Now it goes the physics. Each element represented in the graphical representation should have physics with it. Each element has a physic body and may have some contacts and forces. Like the previous step, 
+                      we define the physics with other object. Inside we put first the physic body, composed by:
+                    </p>
+                    <ul>
+                      <li><b>mass</b>: In kg</li>
+                      <li><b>bodytype</b>: Controls if the AR element is affected by forces (dynamic), not affected (static) or affected by forces with no gravity (kinematic).</li>
+                      <li><b>charge</b>: Electric charge in culombs</li>
+                      <li><b>friction, rollingFriction</b>: 0.0 (no friction) to 1.0 (full retain) </li>
+                      <li><b>restitution</b>: How much energy lose at the rebound when there are contacts (force * restitution -> new force)</li>
+                      <li><b>damping, angularDamping</b>: For the air resistance, same values like friction</li>
+                    </ul>
+                    <p class="lead">Once you have the physic body, you may add some forces. The forces are defined with a name, the gesture (<b>drag, tilt</b> or <b>touch</b>) and a 3D vector of the force if needed (tilt and drag doesn't need a vector)</p>
+                    <p class="lead">The conctacts is to indicate which elements will collide and/or contact. In ARGDSL is defined with <b>collision</b> followed by the elements names and the same with <b>contact</b></p>
+                  </div>
+                </div>
+                <div class="row align-items-start">
+                  <div class="col-md-6 order-md-1">
+                    <p class="figure-caption text-center">Physic.</p>
+                    <img src="./figures/tutorialPhysics.jpg" alt="tutorialPhysics" height="500" width="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
                   </div>
                 </div>
               </div>
