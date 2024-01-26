@@ -84,7 +84,7 @@
                 <div class="row featurette">
                   <div class="col-md">
                     <h2 class="featurette-heading" id="small-caps">Edit the game.</h2>
-                    <p class="lead">At first you will see an empty file. Using the inspector (Ctrl + Space) will appear the Game object, to make the Domain definition of the AR Game. This consist with a name of the Game,
+                    <p class="lead">At first you will see an empty file. Using the inspector (Ctrl + Space) will appear the <b>Game</b> object, to make the Domain definition of the AR Game. This consist with a name of the Game,
                      following with a list of the diferent elements avaiable in the game.</p>
                     <p class="lead">Each element is described by a name and attributes. These attributes are described with a name, following with type, cardinality and a default value. The attributes are optional,
                       which in that case, the object must be empty.
@@ -100,7 +100,7 @@
                 </div>
                 <div class="row featurette">
                   <div class="col-md">
-                    <p class="lead">Next, we will configure the graphical representation. Outside the Game object in the same file, we put the Graphic object. Inside we indicate the element defined in the domain, following with the graphical versions and constraints.</p>
+                    <p class="lead">Next, we will configure the graphical representation. Outside the Game object in the same file, we put the <b>Graphic</b> object. Inside we indicate the element defined in the domain, following with the graphical versions and constraints.</p>
                     <p class="lead">The graphical versions consist in a pair with a name of the version and a valid URL of the 3D object. You can put as many pairs as you want.</p>
                     <p class="lead">The constraints goal is to edit the following features of the AR objects:</p>
                     <ul>
@@ -121,7 +121,7 @@
                 <div class="row featurette">
                   <div class="col-md">
                     <p class="lead">Now it goes the physics. Each element represented in the graphical representation should have physics with it. Each element has a physic body and may have some contacts and forces. Like the previous step, 
-                      we define the physics with other object. Inside we put first the physic body, composed by:
+                      we define the <b>physics</b>physics with other object. Inside we put first the <b>physic body</b>, composed by:
                     </p>
                     <ul>
                       <li><b>mass</b>: In kg</li>
@@ -139,6 +139,29 @@
                   <div class="col-md-6 order-md-1">
                     <p class="figure-caption text-center">Physic.</p>
                     <img src="./figures/tutorialPhysics.jpg" alt="tutorialPhysics" height="500" width="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                  </div>
+                </div>
+                <div class="row featurette">
+                  <div class="col-md">
+                    <p class="lead">And last we have the AR Game logic, where all actions on the game, display and game controlers are defined. Below the <b>Physics</b> object, we put the <b>Gamelogic</b> object.
+                    </p>
+                    <p class="lead">Inside, we start putting the <b>Display</b>: consists in the 3 messages of Start, Lose and Win, and the score information, where we put the start points, the finish points and the lives avaiable in the game.</p>
+                    <p class="lead">Next we have the <b>actions</b> of the game. Each action performs one of four possible basic actions (start the game from scratch, lose, win, restart the game saving the progress), or none of them. In addition, it may display a <b>message</b>, 
+                      change the <b>score</b>, self-trigger the action in a <b>time interval</b> of seconds.</p>
+                    <p class="lead">This actions also can trigger some <b>changes</b> to the objects created of the game by creating or deleting objects, modifying attribute values, applying forces, or changing object positions. The actions can be triggered when an object meets some conditions, there is a collision or a button is pressed.
+                     To do this, looking at the example, the syntax is "<b>do create/delete/edit in</b> (object element name) <b>named</b> (object name)" and optional you can add: "<b>scale Double force (force name) stat (attribute name) changeStat (Int)</b>"</p>
+                    <p class="lead">After this, we have the <b>collisions</b> controller, when we indicate the 2 collisions with the action trigger: <b>element</b> (element A name) <b>to</b> (element B name) -> (action name)</p>
+                    <p class="lead">Then we have the <b>buttons</b> list, where we indicate with and object with a pair of name of the button and the action: "String -> (action name)"</p>
+                    <p class="lead">Last, we have a list of objects of the game at the start indicating the objects' name, class, position, and attribute values. Objects may have associated <b>rules</b>, to be triggered when some attribute condition is met. 
+                      Conditions can be arithmetic or logical, and their operands can be constants, attribute values, and an operation to count the number of objects of a class. Rules syntax:" rules {
+                        <b>do</b> (action name) <b>if</b>(condition)
+                      }"  The conditions is define with <b>if</b> like most languages like Java or C++</p>
+                  </div>
+                </div>
+                <div class="row align-items-start">
+                  <div class="col-md-6 order-md-1">
+                    <p class="figure-caption text-center">Game logic.</p>
+                    <img src="./figures/tutorialGamelogic.jpg" alt="tutorialGamelogic" height="500" width="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
                   </div>
                 </div>
               </div>
